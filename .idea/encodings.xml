@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/java/concurrency/CloseResource.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/java/concurrency/CriticalSection.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/java/concurrency/ExplicitCriticalSection.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/java/concurrency/Interrupting.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/java/concurrency/Interrupting2.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/java/concurrency/NIOInterruption.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/java/concurrency/OrnamentalGarden.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/java/concurrency/exercise/ExceptionThread.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/java/containers/MapEntry.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/java/containers/SlowMap.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/java/io/Directory.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/java/io/DirectoryDemo.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/java/test/apple/service/BufferedReaderProcessor.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/java/util/Countries.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/java/video/Demo.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/java/video/M3U8.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/java/video/Test.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/java/video/Test_01.java" charset="GBK" />
+  </component>
+</project>
