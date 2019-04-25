@@ -20,7 +20,8 @@ public class MapStringDemo {
 		while ((str = reader.readLine()) != null) {
 			builder.append(str);
 		}
-
+		reader.close();
+		isr.close();
 		// 一个字符串，每个字符出现的次数，按出现次数顺序排列
 //		String s = "woaizhuzhuhequanquan";
 		String s = builder.toString();
