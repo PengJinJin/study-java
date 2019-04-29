@@ -1,4 +1,4 @@
-package com.java.concurrency;
+package com.java.concurrency.producer;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -14,33 +14,29 @@ class Meal {
 		this.orderNum = orderNum;
 	}
 
-	@Override
 	public String toString() {
 		return "Meal " + orderNum;
 	}
 }
 
 class WaitPerson implements Runnable {
-
 	private Restaurant restaurant;
 
-	public WaitPerson(Restaurant restaurant) {
-		this.restaurant = restaurant;
+	public WaitPerson(Restaurant r) {
+		restaurant = r;
 	}
 
-	@Override
 	public void run() {
 		try {
 			while (!Thread.interrupted()) {
 				synchronized (this) {
-					while (restaurant.meal == null) {
-						wait();
-					}
+					while (restaurant.meal == null)
+						wait(); // ... for the chef to produce a meal
 				}
-				print("WaitPerson got" + restaurant.meal);
+				print("Waitperson got " + restaurant.meal);
 				synchronized (restaurant.chef) {
 					restaurant.meal = null;
-					restaurant.chef.notifyAll();
+					restaurant.chef.notifyAll(); // Ready for another
 				}
 			}
 		} catch (InterruptedException e) {
@@ -50,51 +46,46 @@ class WaitPerson implements Runnable {
 }
 
 class Chef implements Runnable {
-
 	private Restaurant restaurant;
 	private int count = 0;
 
-	public Chef(Restaurant restaurant) {
-		this.restaurant = restaurant;
+	public Chef(Restaurant r) {
+		restaurant = r;
 	}
 
-	@Override
 	public void run() {
 		try {
 			while (!Thread.interrupted()) {
 				synchronized (this) {
-					// 如果meal不为空,等待用完
-					while (restaurant.meal != null) {
-						wait();
-					}
+					while (restaurant.meal != null)
+						wait(); // ... for the meal to be taken
 				}
 				if (++count == 10) {
 					print("Out of food, closing");
 					restaurant.exec.shutdownNow();
 				}
-				printnb("Order up" + count + "! ");
-				synchronized (restaurant.person) {
+				printnb("Order up! ");
+				synchronized (restaurant.waitPerson) {
 					restaurant.meal = new Meal(count);
-					restaurant.person.notifyAll();
+					restaurant.waitPerson.notifyAll();
 				}
 				TimeUnit.MILLISECONDS.sleep(100);
 			}
-		} catch (Exception e) {
+		} catch (InterruptedException e) {
 			print("Chef interrupted");
 		}
 	}
 }
 
 public class Restaurant {
-
 	Meal meal;
 	ExecutorService exec = Executors.newCachedThreadPool();
-	WaitPerson person = new WaitPerson(this);
+	WaitPerson waitPerson = new WaitPerson(this);
 	Chef chef = new Chef(this);
 
 	public Restaurant() {
 		exec.execute(chef);
-		exec.execute(person);
+		exec.execute(waitPerson);
 	}
 
 	public static void main(String[] args) {
