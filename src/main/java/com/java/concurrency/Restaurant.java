@@ -34,7 +34,7 @@ class WaitPerson implements Runnable {
 			while (!Thread.interrupted()) {
 				synchronized (this) {
 					while (restaurant.meal == null) {
-						wait();
+						wait();// shutdownNow后，调用sleep或是wait或是使线程阻塞的方法都会异常
 					}
 				}
 				print("WaitPerson got" + restaurant.meal);
@@ -45,6 +45,7 @@ class WaitPerson implements Runnable {
 			}
 		} catch (InterruptedException e) {
 			print("WaitPerson interrupted");
+//			e.printStackTrace();
 		}
 	}
 }
@@ -71,6 +72,8 @@ class Chef implements Runnable {
 				if (++count == 10) {
 					print("Out of food, closing");
 					restaurant.exec.shutdownNow();
+					// 练习25，直接return查看打印变化，return之后，表示Chef任务直接退出了
+//					return;
 				}
 				printnb("Order up" + count + "! ");
 				synchronized (restaurant.person) {
