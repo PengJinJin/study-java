@@ -1,0 +1,25 @@
+/*标签选择器*/
+body {
+    background-color:#E9F0F4;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+/*标签选择器*/
+span {
+    color: red;
+}
+
+/*类选择器*/
+.span2 {
+    color: blue;
+}
+
+/*ID选择器*/
+#span3 {
+    color: greenyellow;
+}
+
+div {
+    text-align: center;
+}

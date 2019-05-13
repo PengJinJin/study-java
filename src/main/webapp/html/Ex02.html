@@ -1,0 +1,115 @@
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>新用户注册</title>
+	<!--<link rel="stylesheet" type="text/css" href="../style/home.css"/>-->
+	<link href="https://cdn.bootcss.com/twitter-bootstrap/3.4.1/css/bootstrap.css" rel="stylesheet">
+	<style type="text/css">
+		input {
+			height: 40px !important;
+		}
+
+		select {
+			height: 40px !important;
+		}
+
+		.register-box {
+			width: 714px;
+			height: auto;
+			margin: 100px auto 40px;
+			padding: 50px 0;
+			border: 1px solid #b3b3b3;
+		}
+
+		.register-box .title {
+			margin: 30px 0 50px 0;
+			text-align: center;
+		}
+
+		.register-box select {
+			width: 46%;
+			margin-left: 27%
+		}
+	</style>
+</head>
+<body>
+<div class="register-box">
+	<h2 class="title">注册新用户</h2>
+	<form class="form-horizontal">
+		<div class="form-group">
+			<div class="col-sm-6 col-sm-offset-3">
+				<input type="text" class="form-control" id="username" placeholder="用户名" required>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-6 col-sm-offset-3">
+				<input type="email" class="form-control" id="email" placeholder="邮箱">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-6 col-sm-offset-3">
+				<input type="password" class="form-control" id="password" placeholder="密码">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-6 col-sm-offset-3" style="line-height: 48px;">
+				<!--<label>性别：</label>-->
+				<label class="radio-inline">
+					<input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 男
+				</label>
+				<label class="radio-inline">
+					<input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 女
+				</label>
+				<label class="radio-inline">
+					<input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> 保密
+				</label>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<!--<label for="job">职业：</label>-->
+			<select id="job" class="form-control">
+				<option>请选择职业</option>
+				<option>销售</option>
+				<option>技工</option>
+			</select>
+		</div>
+
+		<div class="form-group">
+			<!--<label for="city">所在城市：</label>-->
+			<select id="city" class="form-control">
+				<option>请选择省份或直辖市</option>
+				<option>北京</option>
+				<option>天津</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-6 col-sm-offset-3">
+				<input type="password" class="form-control" placeholder="一句话介绍">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-4 col-sm-offset-3">
+				<input type="password" class="form-control" placeholder="验证码">
+			</div>
+			<div class="col-sm-2"><img src="../img/yzm.png"></div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-offset-3 col-sm-6" style="line-height: 48px;">
+				<div class="checkbox">
+					<label>
+						<input type="checkbox"> 我同意
+						<a href="https://www.baidu.com" target="_blank">用户协议</a>
+					</label>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-offset-3 col-sm-6">
+				<button type="submit" class="btn btn-primary btn-lg btn-block">注册</button>
+			</div>
+		</div>
+	</form>
+</div>
+</body>
+</html>
