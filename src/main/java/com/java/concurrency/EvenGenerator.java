@@ -6,7 +6,7 @@ public class EvenGenerator extends IntGenerator {
 
 	@Override
 	public int next() {
-		++currentEvenValue;// 可能没有执行就调用了next()
+		++currentEvenValue;// 鍙兘娌℃湁鎵ц灏辫皟鐢ㄤ簡next()
 		++currentEvenValue;
 		return currentEvenValue;
 	}
