@@ -6,12 +6,12 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 public class Ex08 {
-	static List<Character> excludes = Arrays.asList('ï¼Œ', 'ã€‚', 'ã€', ' ', 'ï¼›', 'â€œ', 'â€', 'ã€Š', 'ã€‹');
+	static List<Character> excludes = Arrays.asList('£¬', '¡£', '¡¢', ' ', '£»', '¡°', '¡±', '¡¶', '¡·');
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader reader = new BufferedReader(
 				new InputStreamReader(
-						Ex08.class.getResourceAsStream("ç”Ÿæ´»çš„æ©èµ.txt")
+						Ex08.class.getResourceAsStream("Éú»îµÄ¶÷´Í.txt")
 				));
 		String s;
 		Map<Character, Integer> map = new HashMap<>();

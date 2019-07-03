@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestAll">
+	<test name="final">
+		<groups>
+			<run>
+				<include name="all"/>
+			</run>
+		</groups>
+		<classes>
+			<class name="kkx.test.Test1"/>
+		</classes>
+	</test>
+
+	<!--<test name="selenium">
+		<groups>
+			<run>
+
+			</run>
+		</groups>
+		<classes>
+
+		</classes>
+	</test>-->
+</suite>

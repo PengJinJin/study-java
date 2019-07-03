@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestAll">
+	<test name="final">
+		<classes>
+			<class name="kkx.test.Test2">
+				<methods>
+					<include name="login"/>
+				</methods>
+			</class>
+			<parameter name="yhm" value="qq"/>
+			<parameter name="pwd" value="1234"/>
+
+		</classes>
+	</test>
+
+</suite>
