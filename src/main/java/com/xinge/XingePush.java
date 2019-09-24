@@ -1,3 +1,4 @@
+/*
 package com.xinge;
 
 import com.tencent.xinge.*;
@@ -8,12 +9,14 @@ import org.springframework.beans.factory.annotation.Value;
 
 import java.util.*;
 
+*/
 /**
  * XingePush
  *
  * @author PJ
  * @since 2019-06-17 15:39
- */
+ *//*
+
 //@Component
 public class XingePush {
 
@@ -51,14 +54,16 @@ public class XingePush {
 
 	// ======================= 安卓 =======================
 
-	/**
+	*/
+/**
 	 * 推送给多个账号，限Android设备使用<br> 超过10000，建议改用 {@link #pushAccountListMultipleForAndroid(String, String,
 	 * List)} 接口
 	 *
 	 * @param title    title
 	 * @param content  内容
 	 * @param accounts 账号
-	 */
+	 *//*
+
 	public JSONObject pushAccountForAndroid(String title, String content, List<String> accounts) {
 		if (accounts.size() <= 10000) {
 			Message message = new Message();
@@ -71,13 +76,15 @@ public class XingePush {
 		}
 	}
 
-	/**
+	*/
+/**
 	 * 大批量下发给账号Account，限Android系统使用
 	 *
 	 * @param title    标题
 	 * @param content  内容
 	 * @param accounts 账号
-	 */
+	 *//*
+
 	public JSONObject pushAccountListMultipleForAndroid(String title, String content,
 														List<String> accounts) {
 		Message message = new Message();
@@ -87,13 +94,15 @@ public class XingePush {
 		return pushAccountListMultipleForAndroid(accounts, message);
 	}
 
-	/**
+	*/
+/**
 	 * 推送消息给大批量账号，可对同一个pushId多次调用此接口，限Android系统使用 <br/> 建议用户采用此接口自行控制发送时间
 	 *
 	 * @param accounts 账号列表
 	 * @param message  消息
 	 * @return 服务器执行结果，JSON形式
-	 */
+	 *//*
+
 	public JSONObject pushAccountListMultipleForAndroid(List<String> accounts, Message message) {
 		JSONObject ret = androidXinge.createMultipush(message);
 		if (ret.getInt("ret_code") != 0) {
@@ -108,7 +117,8 @@ public class XingePush {
 		}
 	}
 
-	/**
+	*/
+/**
 	 * 推送给多个tags对应的设备，限Android系统使用，标签关系是AND
 	 *
 	 * @param title    标题
@@ -116,13 +126,15 @@ public class XingePush {
 	 * @param tags     标签列表
 	 * @param linkType 1:打开activity或app,2:打开url,3:打开Intent
 	 * @param linkAdd  打开的地址或URL
-	 */
+	 *//*
+
 	public JSONObject pushTagsAndForAndroid(String title, String content,
 											List<String> tags, int linkType, String linkAdd) {
 		return pushTagsForAndroid(title, content, tags, linkType, linkAdd, "AND");
 	}
 
-	/**
+	*/
+/**
 	 * 推送给多个tags对应的设备，限Android系统使用，标签关系是OR
 	 *
 	 * @param title    标题
@@ -130,13 +142,15 @@ public class XingePush {
 	 * @param tags     标签列表
 	 * @param linkType 1:打开activity或app,2:打开url,3:打开Intent
 	 * @param linkAdd  打开的地址或URL
-	 */
+	 *//*
+
 	public JSONObject pushTagsOrForAndroid(String title, String content,
 										   List<String> tags, int linkType, String linkAdd) {
 		return pushTagsForAndroid(title, content, tags, linkType, linkAdd, "OR");
 	}
 
-	/**
+	*/
+/**
 	 * 推送给多个tags对应的设备，限Android系统使用
 	 *
 	 * @param title    标题
@@ -145,7 +159,8 @@ public class XingePush {
 	 * @param linkType 1:打开activity或app,2:打开url,3:打开Intent
 	 * @param linkAdd  打开的地址或URL
 	 * @param tagOp    多个tag的运算关系，取值必须是下面之一： AND OR
-	 */
+	 *//*
+
 	private JSONObject pushTagsForAndroid(String title, String content, List<String> tags,
 										  int linkType, String linkAdd, String tagOp) {
 		ClickAction action = new ClickAction();
@@ -172,14 +187,16 @@ public class XingePush {
 
 	// ======================= iOS =======================
 
-	/**
+	*/
+/**
 	 * 推送给多个账号，限iOS设备使用 <br/> 如果目标账号数超过10000，建议改用 {@link #pushAccountListMultipleForIOS(String,
 	 * String, List)} 接口
 	 *
 	 * @param title    title
 	 * @param content  内容
 	 * @param accounts 账号
-	 */
+	 *//*
+
 	public JSONObject pushAccountForIOS(String title, String content, List<String> accounts) {
 		if (accounts.size() <= 10000) {
 			MessageIOS msg = new MessageIOS();
@@ -197,13 +214,15 @@ public class XingePush {
 		}
 	}
 
-	/**
+	*/
+/**
 	 * 大批量下发给账号Account，限iOS系统使用
 	 *
 	 * @param title    标题
 	 * @param content  内容
 	 * @param accounts 账号
-	 */
+	 *//*
+
 	public JSONObject pushAccountListMultipleForIOS(String title, String content,
 													List<String> accounts) {
 		int env =
@@ -219,13 +238,15 @@ public class XingePush {
 		return pushAccountListMultipleForIOS(accounts, msg, env);
 	}
 
-	/**
+	*/
+/**
 	 * 推送消息给大批量账号，可对同一个pushId多次调用此接口，限Android系统使用 <br/> 建议用户采用此接口自行控制发送时间
 	 *
 	 * @param accounts 账号列表
 	 * @param message  消息
 	 * @return 服务器执行结果，JSON形式
-	 */
+	 *//*
+
 	public JSONObject pushAccountListMultipleForIOS(List<String> accounts,
 													MessageIOS message, int env) {
 		JSONObject ret = iOSXinge.createMultipush(message, env);
@@ -242,7 +263,8 @@ public class XingePush {
 		}
 	}
 
-	/**
+	*/
+/**
 	 * 推送给多个tags对应的设备，限iOS系统使用，标签关系是AND
 	 *
 	 * @param title    标题
@@ -250,13 +272,15 @@ public class XingePush {
 	 * @param tags     标签列表
 	 * @param linkType 1:打开activity或app,2:打开url,3:打开Intent
 	 * @param linkAdd  打开的地址或URL
-	 */
+	 *//*
+
 	public JSONObject pushTagsAndForIOS(String title, String content,
 										List<String> tags, int linkType, String linkAdd) {
 		return pushTagsForIOS(title, content, tags, linkType, linkAdd, "AND");
 	}
 
-	/**
+	*/
+/**
 	 * 推送给多个tags对应的设备，限IOS系统使用，标签关系是OR
 	 *
 	 * @param title    标题
@@ -264,13 +288,15 @@ public class XingePush {
 	 * @param tags     标签列表
 	 * @param linkType 1:打开activity或app,2:打开url,3:打开Intent
 	 * @param linkAdd  打开的地址或URL
-	 */
+	 *//*
+
 	public JSONObject pushTagsOrForIOS(String title, String content,
 									   List<String> tags, int linkType, String linkAdd) {
 		return pushTagsForIOS(title, content, tags, linkType, linkAdd, "OR");
 	}
 
-	/**
+	*/
+/**
 	 * 推送给多个tags对应的设备，限IOS系统使用
 	 *
 	 * @param title    标题
@@ -279,7 +305,8 @@ public class XingePush {
 	 * @param linkType 1:打开activity或app,2:打开url,3:打开Intent
 	 * @param linkAdd  打开的地址或URL
 	 * @param tagOp    多个tag的运算关系，取值必须是下面之一： AND OR
-	 */
+	 *//*
+
 	private JSONObject pushTagsForIOS(String title, String content, List<String> tags,
 									  int linkType, String linkAdd, String tagOp) {
 		ClickAction action = new ClickAction();
@@ -306,11 +333,13 @@ public class XingePush {
 
 	// ======================= 通用查询 =======================
 
-	/**
+	*/
+/**
 	 * 查询消息推送状态
 	 *
 	 * @param pushIds 推送成功返回的ID
-	 */
+	 *//*
+
 	public JSONArray queryPushStatus(List<String> pushIds) {
 		JSONArray array = new JSONArray();
 		array.put(androidXinge.queryPushStatus(pushIds));
@@ -318,9 +347,11 @@ public class XingePush {
 		return array;
 	}
 
-	/**
+	*/
+/**
 	 * 查询设备数量
-	 */
+	 *//*
+
 	public Long queryDeviceCount() {
 		JSONObject o = androidXinge.queryDeviceCount();
 		long ret = 0L;
@@ -334,11 +365,13 @@ public class XingePush {
 		return ret;
 	}
 
-	/**
+	*/
+/**
 	 * 查询某个tag下的token数量
 	 *
 	 * @param tag 指定的标签
-	 */
+	 *//*
+
 	public Long queryTagTokenNum(String tag) {
 		JSONObject o = androidXinge.queryTagTokenNum(tag);
 		long ret = 0L;
@@ -352,12 +385,14 @@ public class XingePush {
 		return ret;
 	}
 
-	/**
+	*/
+/**
 	 * 查询token相关的信息，包括最近一次活跃时间，离线消息数等
 	 *
 	 * @param deviceToken 目标设备token
 	 * @return 服务器执行结果，JSON形式
-	 */
+	 *//*
+
 	public JSONArray queryInfoOfToken(String deviceToken) {
 		JSONArray array = new JSONArray();
 		array.put(androidXinge.queryInfoOfToken(deviceToken));
@@ -365,12 +400,14 @@ public class XingePush {
 		return array;
 	}
 
-	/**
+	*/
+/**
 	 * 查询账号绑定的token
 	 *
 	 * @param account 目标账号
 	 * @return 服务器执行结果，JSON形式
-	 */
+	 *//*
+
 	public JSONArray queryTokenOfAccount(String account) {
 		JSONArray array = new JSONArray();
 		array.put(androidXinge.queryTokensOfAccount(account));
@@ -378,12 +415,14 @@ public class XingePush {
 		return array;
 	}
 
-	/**
+	*/
+/**
 	 * 查询设备下所有的tag
 	 *
 	 * @param deviceToken 目标设备token
 	 * @return 服务器执行结果，JSON形式
-	 */
+	 *//*
+
 	public JSONArray queryTokenTags(String deviceToken) {
 		JSONArray array = new JSONArray();
 		array.put(androidXinge.queryTokenTags(deviceToken));
@@ -394,23 +433,27 @@ public class XingePush {
 	// ======================= 变更 =======================
 
 
-	/**
+	*/
+/**
 	 * 批量设置标签
 	 *
 	 * @param tag   标签
 	 * @param token 指定删除的token
-	 */
+	 *//*
+
 	public void batchSetTag(String tag, List<String> token) {
 		Map<String, String> map = new LinkedHashMap<>();
 		token.forEach(t -> map.put(tag, t));
 		batchSetTag(map);
 	}
 
-	/**
+	*/
+/**
 	 * 批量设置标签
 	 *
 	 * @param map key为tag，value为token
-	 */
+	 *//*
+
 	public void batchSetTag(Map<String, String> map) {
 		List<TagTokenPair> pairs = new ArrayList<>();
 		map.forEach((k, v) -> pairs.add(new TagTokenPair(k, v)));
@@ -418,23 +461,27 @@ public class XingePush {
 		iOSXinge.BatchSetTag(pairs);
 	}
 
-	/**
+	*/
+/**
 	 * 批量删除标签
 	 *
 	 * @param tag   标签
 	 * @param token 指定删除的token
-	 */
+	 *//*
+
 	public void batchDelTag(String tag, List<String> token) {
 		Map<String, String> map = new LinkedHashMap<>();
 		token.forEach(t -> map.put(tag, t));
 		batchDelTag(map);
 	}
 
-	/**
+	*/
+/**
 	 * 批量删除标签
 	 *
 	 * @param map key为tag，value为token
-	 */
+	 *//*
+
 	public void batchDelTag(Map<String, String> map) {
 		List<TagTokenPair> pairs = new ArrayList<>();
 		map.forEach((k, v) -> pairs.add(new TagTokenPair(k, v)));
@@ -442,31 +489,37 @@ public class XingePush {
 		iOSXinge.BatchDelTag(pairs);
 	}
 
-	/**
+	*/
+/**
 	 * 删除指定账号和token的绑定关系（token仍然有效）
 	 *
 	 * @param account     目标账号
 	 * @param deviceToken 目标设备token
 	 * @return 服务器执行结果，JSON形式
-	 */
+	 *//*
+
 	public void deleteTokenOfAccount(String account, String deviceToken) {
 		androidXinge.deleteTokenOfAccount(account, deviceToken);
 		iOSXinge.deleteTokenOfAccount(account, deviceToken);
 	}
 
-	/**
+	*/
+/**
 	 * 删除指定账号绑定的所有token（token仍然有效）
 	 *
 	 * @param account 目标账号
-	 */
+	 *//*
+
 	public void deleteAllTokenOfAccount(String account) {
 		androidXinge.deleteAllTokensOfAccount(account);
 		iOSXinge.deleteAllTokensOfAccount(account);
 	}
 
-	/**
+	*/
+/**
 	 * 拆分List
-	 */
+	 *//*
+
 	public static <T> List<List<T>> splitList(List<T> list, int size) {
 		List<List<T>> result = new ArrayList<>();
 		for (int begin = 0; begin < list.size(); begin = begin + size) {
@@ -476,9 +529,11 @@ public class XingePush {
 		return result;
 	}
 
-	/**
+	*/
+/**
 	 * 检查请求是否成功
-	 */
+	 *//*
+
 	private boolean validatePushRetStatus(JSONObject jo) {
 		try {
 			return jo != null && jo.getInt("ret_code") == 0;
@@ -488,3 +543,4 @@ public class XingePush {
 	}
 
 }
+*/

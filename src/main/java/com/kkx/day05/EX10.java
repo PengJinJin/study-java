@@ -1,3 +1,4 @@
+/*
 package com.kkx.day05;
 
 import java.io.BufferedReader;
@@ -9,7 +10,7 @@ public class EX10 {
 	public static void main(String[] args) throws IOException {
 		InputStreamReader isr =
 				new InputStreamReader(
-						EX10.class.getResourceAsStream("Éú»îµÄ¶÷´Í.txt"));
+						EX10.class.getResourceAsStream("ç”Ÿæ´»çš„æ©èµ.txt"));
 		BufferedReader reader = new BufferedReader(isr);
 		String s;
 		Map<Character, Integer> map = new HashMap<>();
@@ -31,7 +32,7 @@ public class EX10 {
 	}
 
 	static void reader(String a, Map<Character, Integer> map) {
-		List<Character> excludes = Arrays.asList(' ', ',', '¡£','£¬');
+		List<Character> excludes = Arrays.asList(' ', ',', 'ï¼Œ', 'ã€‚');
 		for (int i = 0; i < a.length(); i++) {
 			char b = a.charAt(i);
 			if (excludes.contains(b)) {
@@ -50,3 +51,4 @@ public class EX10 {
 }
 
 
+*/

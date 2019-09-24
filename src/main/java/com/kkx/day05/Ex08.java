@@ -1,3 +1,4 @@
+/*
 package com.kkx.day05;
 
 import java.io.BufferedReader;
@@ -41,3 +42,4 @@ public class Ex08 {
 
 	}
 }
+*/

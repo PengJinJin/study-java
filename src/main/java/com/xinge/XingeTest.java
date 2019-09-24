@@ -1,3 +1,4 @@
+/*
 package com.xinge;
 
 
@@ -23,3 +24,4 @@ public class XingeTest {
 	}
 
 }
+*/
