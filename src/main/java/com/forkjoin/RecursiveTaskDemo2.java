@@ -65,13 +65,13 @@ public class RecursiveTaskDemo2 {
 		/*
 		Future<Integer> f = pool.submit(task);
 		System.out.println(f.get());
-		pool.shutdown();
 		*/
 		Integer result = pool.invoke(task);
 		System.out.println(result);
 		long end = System.nanoTime();
 		long l = TimeUnit.NANOSECONDS.toMillis(end - start);
 		System.out.println("耗时: " + l + "ms");
+		pool.shutdown();
 	}
 
 }

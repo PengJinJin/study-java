@@ -29,7 +29,7 @@ public class FutureTaskDemo2 {
 			FutureTask<Connection> newTask = new FutureTask<>(callable);
 			connectionFutureTask = connectionPool.putIfAbsent(key, newTask);
 			// 如果返回null表示不存在该key,需要调用run方法执行
-			// 如果已经存在，那么不会覆盖已有的值，直接返回已经存在的值
+			// 如果已经存在，那么不会覆盖已有的值，直接返回已经存在的值ha's
 			if (connectionFutureTask == null) {
 				connectionFutureTask = newTask;
 				connectionFutureTask.run();
