@@ -8,6 +8,9 @@ import java.util.concurrent.TimeUnit;
 
 import static com.java.util.Print.print;
 
+/**
+ * LinkedBlockingQueue使用
+ */
 public class ToastOMatic {
 	public static void main(String[] args) throws InterruptedException {
 		ToastQueue dryQueue = new ToastQueue(),
