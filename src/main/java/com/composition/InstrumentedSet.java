@@ -3,7 +3,7 @@ package com.composition;
 import java.util.Collection;
 import java.util.Set;
 
-public class InstrumentedSet<E> extends FowardSet<E> {
+public class InstrumentedSet<E> extends ForwardSet<E> {
 
 	private int addCount = 0;
 

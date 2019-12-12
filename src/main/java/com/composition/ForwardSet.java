@@ -9,12 +9,12 @@ import java.util.Set;
  *
  * @param <E>
  */
-public class FowardSet<E> implements Set<E> {
+public class ForwardSet<E> implements Set<E> {
 
 	//引用现有类的实例，增加私有域
 	private final Set<E> set;
 
-	public FowardSet(Set<E> set) {
+	public ForwardSet(Set<E> set) {
 		this.set = set;
 	}
 
