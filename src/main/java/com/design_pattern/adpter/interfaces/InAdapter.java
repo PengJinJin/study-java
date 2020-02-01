@@ -4,7 +4,7 @@ public class InAdapter extends InAdaptee {
 
 	@Override
 	public void method1() {
-		System.out.println("interface adaptee method1");
+		System.out.println("interface adaptee am1");
 	}
 
 	@Override

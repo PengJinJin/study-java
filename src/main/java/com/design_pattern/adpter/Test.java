@@ -9,7 +9,7 @@ public class Test {
 	static class ClassTest {
 		public static void main(String[] args) {
 			ClassAdapter adapter = new ClassAdapter();
-			adapter.method1();
+			adapter.am1();
 			adapter.method2();
 		}
 	}

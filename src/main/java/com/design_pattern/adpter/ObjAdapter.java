@@ -1,5 +1,6 @@
 package com.design_pattern.adpter;
 
+// 对象适配器
 public class ObjAdapter implements Target {
 
 	private Adaptee adaptee;
@@ -10,7 +11,7 @@ public class ObjAdapter implements Target {
 
 	@Override
 	public void method1() {
-		adaptee.method1();
+		adaptee.am1();
 	}
 
 	@Override
