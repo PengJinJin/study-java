@@ -1,7 +1,7 @@
 package com.push.account;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tencent.xinge.bean.Platform;
-import org.codehaus.jackson.map.ObjectMapper;
 
 import java.util.List;
 
