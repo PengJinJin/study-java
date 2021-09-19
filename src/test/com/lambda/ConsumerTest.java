@@ -1,18 +1,18 @@
 package com.lambda;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.function.Consumer;
 
 public class ConsumerTest {
 
-	public void apply(double num, Consumer<Double> consumer) {
-		consumer.accept(num);
-	}
+    public void apply(double num, Consumer<Double> consumer) {
+        consumer.accept(num);
+    }
 
-	@Test
-	public void testConsumer() {
-		apply(100, num -> System.out.println("消费了" + num));
-	}
+    @Test
+    public void testConsumer() {
+        apply(100, num -> System.out.println("消费了" + num));
+    }
 
 }
