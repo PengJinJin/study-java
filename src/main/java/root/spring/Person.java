@@ -12,7 +12,7 @@ public class Person {
 class Car {
 
 
-	public Car(CarBuilder builder) {
+	private Car(CarBuilder builder) {
 	}
 
 	public static class CarBuilder {

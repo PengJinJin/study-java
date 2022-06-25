@@ -38,7 +38,7 @@ public class CustomLock {
 				waiters.poll();
 				return;
 			}
-			// 阻塞当前线程，此时会释放CPU资源
+			// 阻塞当前线程，此时会释放CPU资源，不会释放占有的锁资源
 			LockSupport.park(current);
 		}
 	}
